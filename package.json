@@ -1,5 +1,5 @@
 {
-  "name": "hspd-app",
+  "name": "hspd-bootstrap",
   "description": "A client for the hspd : hubot script per day",
   "version": "1.0.0",
   "author": {
@@ -8,7 +8,7 @@
     "url": "http://bouzuya.net"
   },
   "bugs": {
-    "url": "https://github.com/bouzuya/hspd-app/issues"
+    "url": "https://github.com/bouzuya/hspd-bootstrap/issues"
   },
   "dependencies": {
     "express": "^4.10.7"
@@ -34,7 +34,7 @@
     "run-sequence": "^1.0.2",
     "tsd": "^0.5.7"
   },
-  "homepage": "https://github.com/bouzuya/hspd-app",
+  "homepage": "https://github.com/bouzuya/hspd-bootstrap",
   "keywords": [
     "hspd",
     "hubot",
@@ -45,7 +45,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bouzuya/hspd-app"
+    "url": "https://github.com/bouzuya/hspd-bootstrap"
   },
   "scripts": {
     "clean": "gulp clean",

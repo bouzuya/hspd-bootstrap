@@ -3,5 +3,5 @@ deployment:
     branch: master
     owner: bouzuya
     heroku:
-      appname: hspd-app
+      appname: hspd-bootstrap
 
