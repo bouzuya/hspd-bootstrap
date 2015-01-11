@@ -1,8 +1,8 @@
-# hspd-app
+# hspd-bootstrap
 
-A client for the hspd : hubot script per day.
+A client for the hspd using bootstrap.
 
-This product is one of [the bouzuya's shuburi][shuburi]. The product was released in 2015-W02.
+This product is one of [the bouzuya's shuburi][shuburi]. The product was released in 2015-W03.
 
 # Development
 
@@ -28,8 +28,7 @@ See `npm run`.
 [bouzuya]: https://github.com/bouzuya/
 [email]: mailto:m@bouzuya.net
 [url]: http://bouzuya.net
-
-[circle-ci]: https://circleci.com/gh/bouzuya/hspd-app
-[circle-ci-badge]: https://circleci.com/gh/bouzuya/hspd-app.svg?style=svg
+[circle-ci]: https://circleci.com/gh/bouzuya/hspd-bootstrap
+[circle-ci-badge]: https://circleci.com/gh/bouzuya/hspd-bootstrap.svg?style=svg
 [heroku-button]: https://www.herokucdn.com/deploy/button.png
 [heroku-deploy]: https://heroku.com/deploy
