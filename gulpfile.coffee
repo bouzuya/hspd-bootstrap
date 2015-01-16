@@ -91,7 +91,7 @@ gulp.task 'tsd', ->
   api.readConfig().then ->
     options = tsd.Options.fromJSON
       overwriteFiles: true
-      saveToConfig: fals  e
+      saveToConfig: false
     api.reinstall options
 
 gulp.task 'typescript', ->
