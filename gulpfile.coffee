@@ -24,7 +24,7 @@ gulp.task 'build', (done) ->
   run.apply run, [
     'typescript'
     'webpack'
-    'css'
+    'less'
     'html'
     done
   ]
@@ -43,12 +43,6 @@ gulp.task 'default', ->
   run.apply(run, ['clean', 'build'])
 
 gulp.task 'deps', ['tsd']
-
-gulp.task 'css', ->
-  gulp
-    .src paths.appDir + '/styles/*.css'
-    .pipe gulp.dest paths.distDir + '/styles'
-    .pipe browserSync.reload(stream: true)
 
 gulp.task 'html', ->
   usemin = require 'gulp-usemin'
@@ -72,6 +66,14 @@ gulp.task 'karma', (done) ->
     .on 'end', done
   null
 
+gulp.task 'less', ->
+  less = require 'gulp-less'
+  gulp
+    .src paths.appDir + '/styles/*.less'
+    .pipe less()
+    .pipe gulp.dest paths.distDir + '/styles'
+    .pipe browserSync.reload(stream: true)
+
 gulp.task 'test', (done) ->
   run = require 'run-sequence'
   run.apply run, [
@@ -89,7 +91,7 @@ gulp.task 'tsd', ->
   api.readConfig().then ->
     options = tsd.Options.fromJSON
       overwriteFiles: true
-      saveToConfig: fals  e
+      saveToConfig: false
     api.reinstall options
 
 gulp.task 'typescript', ->
@@ -139,7 +141,7 @@ gulp.task 'watch', ->
   gulp.watch [
     paths.appFiles
     paths.testFiles
-    paths.appDir + '/styles/*.css'
+    paths.appDir + '/styles/*.less'
     paths.appDir + '/index.html'
   ], ['test-and-build']
   browserSync
