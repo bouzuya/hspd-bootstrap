@@ -153,6 +153,7 @@ gulp.task 'watch', ['build'], ->
     paths.appDir + '/index.html'
   ], ['test-and-build']
   browserSync
+    port: parseInt(process.env.PORT ? '5000')
     server:
       baseDir: './dist'
 
