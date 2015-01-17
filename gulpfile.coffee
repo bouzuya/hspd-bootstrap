@@ -45,10 +45,15 @@ gulp.task 'default', ->
 gulp.task 'deps', ['tsd']
 
 gulp.task 'html', ->
+  rev = require 'gulp-rev'
   usemin = require 'gulp-usemin'
   gulp
     .src paths.appDir + '/index.html'
-    .pipe usemin()
+    .pipe usemin(
+      css: [rev()]
+      vendorjs: [rev()]
+      mainjs: [rev()]
+    )
     .pipe gulp.dest paths.distDir
     .pipe browserSync.reload(stream: true)
 
