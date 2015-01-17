@@ -76,6 +76,9 @@ gulp.task 'less', ->
   gulp
     .src paths.appDir + '/styles/*.less'
     .pipe less()
+    .on 'error', (e) ->
+      gutil.log e
+      @emit 'end'
     .pipe gulp.dest paths.distDir + '/styles'
     .pipe browserSync.reload(stream: true)
 
