@@ -45,10 +45,15 @@ gulp.task 'default', ->
 gulp.task 'deps', ['tsd']
 
 gulp.task 'html', ->
+  rev = require 'gulp-rev'
   usemin = require 'gulp-usemin'
   gulp
     .src paths.appDir + '/index.html'
-    .pipe usemin()
+    .pipe usemin(
+      css: [rev()]
+      vendorjs: [rev()]
+      mainjs: [rev()]
+    )
     .pipe gulp.dest paths.distDir
     .pipe browserSync.reload(stream: true)
 
@@ -71,6 +76,9 @@ gulp.task 'less', ->
   gulp
     .src paths.appDir + '/styles/*.less'
     .pipe less()
+    .on 'error', (e) ->
+      gutil.log e
+      @emit 'end'
     .pipe gulp.dest paths.distDir + '/styles'
     .pipe browserSync.reload(stream: true)
 
@@ -137,7 +145,7 @@ gulp.task 'test-and-build', (done) ->
   ]
   null
 
-gulp.task 'watch', ->
+gulp.task 'watch', ['build'], ->
   gulp.watch [
     paths.appFiles
     paths.testFiles
@@ -145,6 +153,7 @@ gulp.task 'watch', ->
     paths.appDir + '/index.html'
   ], ['test-and-build']
   browserSync
+    port: parseInt(process.env.PORT ? '5000')
     server:
       baseDir: './dist'
 
