@@ -145,7 +145,7 @@ gulp.task 'test-and-build', (done) ->
   ]
   null
 
-gulp.task 'watch', ->
+gulp.task 'watch', ['build'], ->
   gulp.watch [
     paths.appFiles
     paths.testFiles
