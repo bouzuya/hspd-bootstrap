@@ -12,8 +12,8 @@ export class AppCtrl {
     this.loaded = false;
     this.scripts = [];
 
-    $http.get<Array<{}>>('https://hspd-api.herokuapp.com/hubot_scripts')
-    .then((res) => {
+    var url = 'https://hspd-api.herokuapp.com/hubot_scripts';
+    $http.get<Array<{}>>(url).then((res) => {
       this.loaded = true;
       this.scripts = res.data;
     });
