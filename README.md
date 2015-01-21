@@ -4,6 +4,8 @@ A client for the hspd using bootstrap.
 
 This product is one of [the bouzuya's shuburi][shuburi]. The product was released in 2015-W03.
 
+Demo: [hspd-bootstrap.herokuapp.com](https://hspd-bootstrap.herokuapp.com/)
+
 # Development
 
 See `npm run`.
